@@ -1,23 +1,67 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <ul class="left">
+      <li v-for="(item,index) of menuList "
+          :key=item.id
+          @click.stop = "changeRouter(item,index)"
+          class="item"
+          :class="{'active':$route.name === item.routeName}">
+          {{item.title}}
+      </li>
+    </ul>
+    <div class="main">
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    return {
+      menuList: [
+        {
+          id: 0,
+          title: 'hello',
+          routeName: 'HelloWorld'
+        },
+        {
+          id: 1,
+          title: '生命周期',
+          routeName: 'LifeCycle'
+        }
+      ],
+    }
+  },
+  methods:{
+    changeRouter(menu, index) {
+      this.$router.push({
+        name: menu.routeName
+      })
+    }
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+</style>
+<style scoped>
+  .left {
+    width: 200px;
+    float:left;
+  }
+  .left .item:hover,
+  .left .active{
+    color:red;
+  }
+  .main {
+    width: calc(100% - 202px);
+    float: right;
+  }
 </style>
