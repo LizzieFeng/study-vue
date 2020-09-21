@@ -52,6 +52,20 @@
                   </div>
               </div>
           </li>
+          <li>
+              <h2>
+                  4、测试nextick和生命周期关系（看控制台输出）
+              </h2>
+              <div class="testGroupContainer">
+                  <div>
+                      <button @click.stop="addDparent(true)">加载DParent组件</button>
+                      <button @click.stop="addDparent(false)">卸载DParent组件</button>
+                  </div>
+                  <div>
+                      <Dparent v-if="DparentFlag"></Dparent>
+                  </div>
+              </div>
+          </li>
       </ul>
   </div>
 </template>
@@ -60,18 +74,21 @@
 import Aparent from '@/components/AParent';
 import Bparent from '@/components/BParent';
 import Cparent from '@/components/CParent';
+import Dparent from '@/components/DParent';
 export default {
     name: 'LifeCycle',
     components:{
         Aparent,
         Bparent,
-        Cparent
+        Cparent,
+        Dparent,
     },
     data () {
         return {
             AparentFlag: false,
             broCompName: '',
             CparentFlag: false,
+            DparentFlag: false,
         }
     },
     methods:{
@@ -85,6 +102,10 @@ export default {
 
         addCparent(existFlag) {
             this.CparentFlag = !! existFlag;
+        },
+
+        addDparent(existFlag) {
+            this.DparentFlag = !! existFlag;
         }
     }
 }
