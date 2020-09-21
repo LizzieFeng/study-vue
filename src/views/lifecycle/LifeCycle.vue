@@ -8,7 +8,12 @@
               <h2>
                   1、测试父子组件的生命周期关系（看控制台输出）
               </h2>
-              <div class="testGroupContainer">
+              <!-- <div class="conclusion">
+                  <h3>结论</h3>
+                  <p>
+                  </p>
+              </div> -->
+              <p class="testGroupContainer">
                   <div>
                       <button @click.stop="addAparent(true)">加载AParent组件</button>
                       <button @click.stop="addAparent(false)">卸载AParent组件</button>
@@ -16,7 +21,7 @@
                   <div>
                       <Aparent v-if="AparentFlag"></Aparent>
                   </div>
-              </div>
+              </p>
           </li>
           <li>
               <h2>
@@ -33,6 +38,20 @@
                   </div>
               </div>
           </li>
+          <li>
+              <h2>
+                  3、测试data、watch、prop和生命周期关系（看控制台输出）
+              </h2>
+              <div class="testGroupContainer">
+                  <div>
+                      <button @click.stop="addCparent(true)">加载CParent组件</button>
+                      <button @click.stop="addCparent(false)">卸载CParent组件</button>
+                  </div>
+                  <div>
+                      <Cparent v-if="CparentFlag"></Cparent>
+                  </div>
+              </div>
+          </li>
       </ul>
   </div>
 </template>
@@ -40,16 +59,19 @@
 <script>
 import Aparent from '@/components/AParent';
 import Bparent from '@/components/BParent';
+import Cparent from '@/components/CParent';
 export default {
     name: 'LifeCycle',
     components:{
         Aparent,
-        Bparent
+        Bparent,
+        Cparent
     },
     data () {
         return {
             AparentFlag: false,
             broCompName: '',
+            CparentFlag: false,
         }
     },
     methods:{
@@ -59,14 +81,18 @@ export default {
 
         changeBro(broCompName) {
             this.broCompName = broCompName;
+        },
+
+        addCparent(existFlag) {
+            this.CparentFlag = !! existFlag;
         }
     }
 }
 </script>
 
 <style scoped>
-    li {
-        
+    .conclusion {
+        background: cadetblue;
     }
     .testGroupContainer{
         /* border: 2px solid red; */
