@@ -30,6 +30,16 @@ export default {
           id: 1,
           title: '生命周期',
           routeName: 'LifeCycle'
+        },
+        {
+          id: 2,
+          title: 'Filter',
+          routeName: 'FilterComp'
+        },
+        {
+          id: 3,
+          title: 'VuexWatch',
+          routeName: 'VuexWatchComp'
         }
       ],
     }
