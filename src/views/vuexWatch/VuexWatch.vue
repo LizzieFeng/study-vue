@@ -11,11 +11,12 @@
               <div class="testGroupContainer">
                   <div>
                       <button @click.stop="changeVuexAB()">同时更改vuex的 A 和 B</button>
+                      <button @click.stop="changeVuexBThenA()">先更改vuex的 B 再更改 A</button>
+                      <button @click.stop="awaitChangeVuexAPlainB()">await更改vuex的 A 正常更改 B</button>
                   </div>
                   <div>
-                      <WatchVuexB></WatchVuexB>
                       <WatchVuexA></WatchVuexA>
-                      
+                      <WatchVuexB></WatchVuexB>
                   </div>
               </div>
           </li>
@@ -41,6 +42,26 @@ export default {
             debugger
             this.$store.commit('updateVuexA', '我是vuexA更新后的值');
             this.$store.commit('updateVuexB', '我是vuexB更新后的值');
+        },
+
+        changeVuexBThenA() {
+            debugger
+            setTimeout(() => {
+                this.$store.commit('updateVuexA', '我是vuexA setTime更新后的值');
+            }, 100)
+            this.$store.commit('updateVuexB', '我是vuexB更新后的值');
+        },
+
+        async awaitChangeVuexAPlainB(){
+            let secondsAfterVal = await this.resolveAfter2Seconds('await 2s 以后的值');
+        },
+
+        resolveAfter2Seconds(x) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                resolve(x);
+                }, 2000);
+            });
         }
     }
 }

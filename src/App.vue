@@ -40,6 +40,11 @@ export default {
           id: 3,
           title: 'VuexWatch',
           routeName: 'VuexWatchComp'
+        },
+        {
+          id: 4,
+          title: 'keep-alive',
+          routeName: 'KeepAliveComp'
         }
       ],
     }
