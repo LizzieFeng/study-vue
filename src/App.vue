@@ -45,6 +45,11 @@ export default {
           id: 4,
           title: 'keep-alive',
           routeName: 'KeepAliveComp'
+        },
+        {
+          id: 5,
+          title: 'dialogUI组件',
+          routeName: 'SelfDialog'
         }
       ],
     }

@@ -5,6 +5,7 @@ import LifeCycle from '@/views/lifecycle/LifeCycle.vue'
 import FilterComp from '@/views/filter/Filter.vue'
 import VuexWatchComp from '@/views/vuexWatch/VuexWatch.vue'
 import KeepAliveComp from '@/views/keepAlive/KeepAliveComp.vue'
+import SelfDialog from '@/views/SelfDialog/SelfDialog.vue'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/keepAlive',
       name: 'KeepAliveComp',
       component: KeepAliveComp
+    },
+    {
+      path: '/dialog',
+      name: 'SelfDialog',
+      component: SelfDialog
     }
   ]
 })
