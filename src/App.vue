@@ -50,6 +50,11 @@ export default {
           id: 5,
           title: 'dialogUI组件',
           routeName: 'SelfDialog'
+        },
+        {
+          id: 6,
+          title: 'mixin',
+          routeName: 'MixinComp'
         }
       ],
     }
