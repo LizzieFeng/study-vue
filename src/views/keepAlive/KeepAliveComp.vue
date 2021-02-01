@@ -9,7 +9,7 @@
                   1、测试KeepAlive和生命周期之间的关系
               </h2>
               <div class="testGroupContainer">
-                  <keep-alive>
+                  <keep-alive v-if="keepaliveShow">
                       <component :is="compName" @changeParentVal="changeParentVal"></component>
                   </keep-alive>
                   <div @click.stop="changeComp">
@@ -24,6 +24,16 @@
               <div class="testGroupContainer">
                   <div >
                       {{parentValFromChild}}
+                  </div>
+              </div>
+          </li>
+          <li>
+              <h2>
+                  3、测试keepalive已经缓存了组件后，使用v-if false掉keepalive
+              </h2>
+              <div class="testGroupContainer">
+                  <div @click.stop="toggleKeealive">
+                      {{!keepaliveShow}}掉keepalive
                   </div>
               </div>
           </li>
@@ -43,7 +53,8 @@ export default {
     data () {
         return {
             compName: 'KeepAliveA',
-            parentValFromChild: '父组件默认的值'
+            parentValFromChild: '父组件默认的值',
+            keepaliveShow: true
         }
     },
     methods:{
@@ -53,6 +64,9 @@ export default {
 
         changeParentVal(val) {
             this.parentValFromChild = val;
+        },
+        toggleKeealive() {
+            this.keepaliveShow = !this.keepaliveShow;
         }
     }
 }
