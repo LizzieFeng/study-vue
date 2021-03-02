@@ -7,6 +7,7 @@ import VuexWatchComp from '@/views/vuexWatch/VuexWatch.vue'
 import KeepAliveComp from '@/views/keepAlive/KeepAliveComp.vue'
 import SelfDialog from '@/views/SelfDialog/SelfDialog.vue'
 import MixinComp from '@/views/mixin/MixinComp.vue'
+import ElDialogStudy from '@/views/elDialogStudy/ElDialogStudy.vue'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/mixin',
       name: 'MixinComp',
       component: MixinComp
+    },
+    {
+      path: '/elDialog',
+      name: 'ElDialogStudy',
+      component: ElDialogStudy
     }
   ]
 })

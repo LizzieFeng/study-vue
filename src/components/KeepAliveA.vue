@@ -3,12 +3,19 @@
       <h3>我是KeepAliveA组件--{{message}}</h3>
       <div @click.stop="changeMessage">更改message</div>
       <div @click.stop="changeParentVal">更改父组件的值</div>
+      <div>
+          <KeepAliveAChildren></KeepAliveAChildren>
+      </div>
   </div>
 </template>
 
 <script>
+import KeepAliveAChildren from '@/components/KeepAliveAChildren.vue';
 export default {
     name: 'KeepAliveA',
+    components:{
+        KeepAliveAChildren,
+    },
     data () {
         return {
             message: 'hello KeepAliveA'

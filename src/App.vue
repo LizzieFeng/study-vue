@@ -55,6 +55,11 @@ export default {
           id: 6,
           title: 'mixin',
           routeName: 'MixinComp'
+        },
+        {
+          id: 7,
+          title: 'elDialog',
+          routeName: 'ElDialogStudy'
         }
       ],
     }
