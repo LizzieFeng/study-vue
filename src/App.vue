@@ -60,6 +60,11 @@ export default {
           id: 7,
           title: 'elDialog',
           routeName: 'ElDialogStudy'
+        },
+        {
+          id: 8,
+          title: 'microMacro',
+          routeName: 'MicroMacroStudy'
         }
       ],
     }

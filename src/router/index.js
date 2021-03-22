@@ -8,6 +8,7 @@ import KeepAliveComp from '@/views/keepAlive/KeepAliveComp.vue'
 import SelfDialog from '@/views/SelfDialog/SelfDialog.vue'
 import MixinComp from '@/views/mixin/MixinComp.vue'
 import ElDialogStudy from '@/views/elDialogStudy/ElDialogStudy.vue'
+import MicroMacroStudy from '@/views/microMacroStudy/MicroMacroStudy'
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
       path: '/elDialog',
       name: 'ElDialogStudy',
       component: ElDialogStudy
+    },
+    {
+      path: '/microMacro',
+      name: 'MicroMacroStudy',
+      component: MicroMacroStudy
     }
   ]
 })
