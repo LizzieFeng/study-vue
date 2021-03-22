@@ -69,6 +69,10 @@ export default {
         })
 
         console.log('script end')
+        this.$nextTick( () => {
+            console.log('nexttick 44');
+        });
+
     },
     mounted() {
     }
