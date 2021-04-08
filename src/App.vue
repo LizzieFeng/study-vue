@@ -7,6 +7,7 @@
           class="item"
           :class="{'active':$route.name === item.routeName}">
           {{item.title}}
+          <!-- 测试git push -->
       </li>
     </ul>
     <div class="main">
