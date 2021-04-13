@@ -2,7 +2,7 @@
   <div class="ElDialogStudy">
       <h3>el-dialog 组件学习</h3>
       <div>
-            <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
+            <!-- <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button> -->
             <div>
                 dialogVisible:{{dialogVisible}}
             </div>
@@ -91,15 +91,33 @@
                 <!-- </code>
             </div> -->
            
+             <div>
+                <h4>
+                    4、测试两个同时追加在body下的el-dialog，dom结构被移除，但是dom结构使用的变量的销毁的情况
+                </h4>   
+                <el-button @click="dialogVisible = true">
+                    在body下追加一个el-dialog,这个el-dialog不使用destroy-on-close，但是这个eldialog内嵌入一个组件
+                </el-button>
+                <!-- :destroy-on-close="true" -->
+                <el-dialog
+                    title="dialog"
+                    :visible.sync="dialogVisible"
+                    >
+                    <el-button @click="dialogVisible = false">关闭</el-button>
+                    <AChild></AChild>
+                </el-dialog>
+            </div>
             
       </div>
   </div>
 </template>
 
 <script>
+import AChild from '@/components/AChild.vue'
 export default {
     name: 'ElDialogStudy',
     components:{
+        AChild,
     },
     data () {
         return {
@@ -107,6 +125,12 @@ export default {
         }
     },
     methods: {
+        
+        // closeEldialog() {
+        //     console.log('closeEldialog')
+        //     debugger
+        //     this.dialogVisible = false;
+        // }
     },
     mounted() {
     }
@@ -120,7 +144,7 @@ export default {
 </style>
 
 <style>
-    .el-dialog__wrapper{
+    /* .el-dialog__wrapper{
         position: absolute;
         pointer-events: none;
     }
@@ -139,5 +163,5 @@ export default {
         right: 0px;
         width: 200px;
         height: 200px;
-    }
+    } */
 </style>
