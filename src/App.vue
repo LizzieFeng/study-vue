@@ -11,9 +11,9 @@
       </li>
     </ul>
     <div class="main">
-      <div>
+      <!-- <div>
         我现在的位置是emitMessage，是为了测试EmitOnChild组件点击按钮时，直接使用this.$on进行监听:{{emitMessage}}
-      </div>
+      </div> -->
       <router-view/>
     </div>
   </div>
@@ -24,7 +24,7 @@ export default {
   name: 'App',
   data() {
     return {
-      emitMessage: '我是app.vue 的emitMessage初始值',
+      // emitMessage: '我是app.vue 的emitMessage初始值',
       menuList: [
         {
           id: 0,
@@ -75,6 +75,11 @@ export default {
           id: 9,
           title: 'emitOn',
           routeName: 'EmitOnStudy'
+        },
+        {
+          id: 10,
+          title: 'transition',
+          routeName: 'TransitionStudy'
         }
       ],
     }
@@ -87,9 +92,9 @@ export default {
     }
   },
   created(){
-    this.$on('notifyFatherMessage', (val) => {
-      this.emitMessage = val;
-    })
+    // this.$on('notifyFatherMessage', (val) => {
+    //   this.emitMessage = val;
+    // })
   }
 }
 </script>

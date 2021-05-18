@@ -10,6 +10,7 @@ import MixinComp from '@/views/mixin/MixinComp.vue'
 import ElDialogStudy from '@/views/elDialogStudy/ElDialogStudy.vue'
 import MicroMacroStudy from '@/views/microMacroStudy/MicroMacroStudy.vue'
 import EmitOnStudy from '@/views/emitOn/EmitOn.vue'
+import TransitionStudy from '@/views/transitionStudy/TransitionStudy.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -63,6 +64,11 @@ export default new Router({
       path: '/emitOn',
       name: 'EmitOnStudy',
       component: EmitOnStudy
+    },
+    {
+      path: '/transition',
+      name: 'TransitionStudy',
+      component: TransitionStudy
     }
   ]
 })
