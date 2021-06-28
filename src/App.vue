@@ -80,6 +80,11 @@ export default {
           id: 10,
           title: 'transition',
           routeName: 'TransitionStudy'
+        },
+        {
+          id: 11,
+          title: 'v-if和v-for',
+          routeName: 'IfFor'
         }
       ],
     }

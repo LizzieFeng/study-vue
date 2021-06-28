@@ -11,6 +11,7 @@ import ElDialogStudy from '@/views/elDialogStudy/ElDialogStudy.vue'
 import MicroMacroStudy from '@/views/microMacroStudy/MicroMacroStudy.vue'
 import EmitOnStudy from '@/views/emitOn/EmitOn.vue'
 import TransitionStudy from '@/views/transitionStudy/TransitionStudy.vue'
+import IfFor from '@/views/ifFor/IfFor.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -69,6 +70,11 @@ export default new Router({
       path: '/transition',
       name: 'TransitionStudy',
       component: TransitionStudy
+    },
+    {
+      path: '/iffor',
+      name: 'IfFor',
+      component: IfFor
     }
   ]
 })
