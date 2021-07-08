@@ -85,6 +85,11 @@ export default {
           id: 11,
           title: 'v-if和v-for',
           routeName: 'IfFor'
+        },
+        {
+          id: 12,
+          title: '闭包、防抖、节流',
+          routeName: 'Closure'
         }
       ],
     }

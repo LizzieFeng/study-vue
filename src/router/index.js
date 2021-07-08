@@ -12,6 +12,7 @@ import MicroMacroStudy from '@/views/microMacroStudy/MicroMacroStudy.vue'
 import EmitOnStudy from '@/views/emitOn/EmitOn.vue'
 import TransitionStudy from '@/views/transitionStudy/TransitionStudy.vue'
 import IfFor from '@/views/ifFor/IfFor.vue'
+import Closure from '@/views/closure/Closure.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -75,6 +76,11 @@ export default new Router({
       path: '/iffor',
       name: 'IfFor',
       component: IfFor
+    },
+    {
+      path: '/closure',
+      name: 'Closure',
+      component: Closure
     }
   ]
 })
