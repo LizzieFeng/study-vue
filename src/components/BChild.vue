@@ -2,6 +2,14 @@
   <div class="container">
       <h3>我是BChild组件--{{msg}}</h3>
       <div>
+        <h2>
+                  $listeners
+              </h2>
+              <div class="testGroupContainer">
+                 本身的数据$listeners--{{$listeners}},
+                 <br>
+                 看控制台，$listeners中有数据的。
+              </div>
       </div>
   </div>
 </template>
@@ -21,6 +29,7 @@ export default {
 
     created() {
        console.log('我是 BChild created,this.msg=',this.msg);
+       console.log('BChild，组件的$listeners:', this.$listeners);
     //    this.msg = 'created';
     },
     beforeMount() {

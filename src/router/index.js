@@ -13,6 +13,7 @@ import EmitOnStudy from '@/views/emitOn/EmitOn.vue'
 import TransitionStudy from '@/views/transitionStudy/TransitionStudy.vue'
 import IfFor from '@/views/ifFor/IfFor.vue'
 import Closure from '@/views/closure/Closure.vue'
+import AtrrsAndListeners from '@/views/attrsAndListeners/AtrrsAndListeners.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -81,6 +82,11 @@ export default new Router({
       path: '/closure',
       name: 'Closure',
       component: Closure
+    },
+    {
+      path: '/attrs',
+      name: 'AtrrsAndListeners',
+      component: AtrrsAndListeners
     }
   ]
 })

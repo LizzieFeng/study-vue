@@ -14,7 +14,9 @@
       <!-- <div>
         我现在的位置是emitMessage，是为了测试EmitOnChild组件点击按钮时，直接使用this.$on进行监听:{{emitMessage}}
       </div> -->
-      <router-view/>
+      <router-view :appData="dataForChild" :appData2="dataForChild2"
+        @appFn="onApp"
+      />
     </div>
   </div>
 </template>
@@ -24,6 +26,8 @@ export default {
   name: 'App',
   data() {
     return {
+      dataForChild: '我是来自app的数据',
+      dataForChild2: '我是来自app的数据',
       // emitMessage: '我是app.vue 的emitMessage初始值',
       menuList: [
         {
@@ -90,6 +94,11 @@ export default {
           id: 12,
           title: '闭包、防抖、节流',
           routeName: 'Closure'
+        },
+        {
+          id: 13,
+          title: 'attrs、listeners',
+          routeName: 'AtrrsAndListeners'
         }
       ],
     }
@@ -99,6 +108,9 @@ export default {
       this.$router.push({
         name: menu.routeName
       })
+    },
+    onApp() {
+
     }
   },
   created(){

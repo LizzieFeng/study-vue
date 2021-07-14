@@ -2,6 +2,15 @@
   <div class="container">
       <h3>我是AChild组件--{{msg}}</h3>
       <div>
+          我是AChild组件，数据来源于父级：--{{dataFromParent}}
+      </div>
+      <h3>我是AChild组件的$attrs</h3>
+      <div>
+        本组件针对父组件的:,没有写Prop接收的，出现在数据中$attrs ,
+        <br>
+        其中，v-bind="$attrs"在父组件使用，将父组件的$attrs,在本组件直接出现在$attrs （merge）
+        <br>
+        --{{$attrs}}
       </div>
   </div>
 </template>
@@ -13,6 +22,9 @@ export default {
         return {
         msg: 'Welcome to AChild'
         }
+    },
+    props: {
+        dataFromParent: String,
     },
     beforeCreate() {
        console.log('我是 AChild beforeCreate,this.msg=',this.msg);
